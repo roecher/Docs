@@ -5,7 +5,7 @@ description: Learn how to configure ASP.NET Core SignalR apps.
 monikerRange: '>= aspnetcore-2.1'
 ms.author: bradyg
 ms.custom: mvc
-ms.date: 09/06/2018
+ms.date: 02/07/2019
 uid: signalr/configuration
 ---
 # ASP.NET Core SignalR configuration
@@ -57,7 +57,7 @@ The following table describes options for configuring SignalR hubs:
 
 | Option | Default Value | Description |
 | ------ | ------------- | ----------- |
-| `ClientTimeoutInterval` | 30 seconds | The server will consider the client disconnected if it hasn't received a message (including keep-alive) in this interval. It is possible for it to take longer than this timeout interval for the client to actually be marked disconnected, due to how this is implemented. The recommended value is double the `KeepAliveInterval` value.|
+| `ClientTimeoutInterval` | 30 seconds | The server will consider the client disconnected if it hasn't received a message (including keep-alive) in this interval. It could take longer than this timeout interval for the client to actually be marked disconnected, due to how this is implemented. The recommended value is double the `KeepAliveInterval` value.|
 | `HandshakeTimeout` | 15 seconds | If the client doesn't send an initial handshake message within this time interval, the connection is closed. This is an advanced setting that should only be modified if handshake timeout errors are occurring due to severe network latency. For more detail on the handshake process, see the [SignalR Hub Protocol Specification](https://github.com/aspnet/SignalR/blob/master/specs/HubProtocol.md). |
 | `KeepAliveInterval` | 15 seconds | If the server hasn't sent a message within this interval, a ping message is sent automatically to keep the connection open. When changing `KeepAliveInterval`, change the `ServerTimeout`/`serverTimeoutInMilliseconds` setting on the client. The recommended `ServerTimeout`/`serverTimeoutInMilliseconds` value is double the `KeepAliveInterval` value.  |
 | `SupportedProtocols` | All installed protocols | Protocols supported by this hub. By default, all protocols registered on the server are allowed, but protocols can be removed from this list to disable specific protocols for individual hubs. |
@@ -85,7 +85,28 @@ services.AddSignalR().AddHubOptions<MyHub>(options =>
 });
 ```
 
-Use `HttpConnectionDispatcherOptions` to configure advanced settings related to transports and memory buffer management. These options are configured by passing a delegate to [MapHub\<T>](/dotnet/api/microsoft.aspnetcore.signalr.hubroutebuilder.maphub).
+### Advanced HTTP configuration options
+
+Use `HttpConnectionDispatcherOptions` to configure advanced settings related to transports and memory buffer management. These options are configured by passing a delegate to [MapHub\<T>](/dotnet/api/microsoft.aspnetcore.signalr.hubroutebuilder.maphub) in `Startup.Configure`.
+
+```csharp
+public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+{
+    app.UseSignalR((configure) => 
+    {
+        var desiredTransports = 
+            HttpTransportType.WebSockets |
+            HttpTransportType.LongPolling;
+
+        configure.MapHub<MyHub>("/myhub", (options) => 
+        {
+            options.Transports = desiredTransports;
+        });
+    });
+}
+```
+
+The following table describes options for configuring ASP.NET Core SignalR's advanced HTTP options:
 
 | Option | Default Value | Description |
 | ------ | ------------- | ----------- |

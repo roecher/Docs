@@ -90,11 +90,12 @@
   items: 
     - name: Razor Pages
       items: 
-        - name: Overview
+        - name: Introduction
           uid: razor-pages/index
         - name: Tutorial
-          uid: tutorials/razor-pages/index
           items: 
+            - name: Overview          
+              uid: tutorials/razor-pages/index
             - name: Get started
               uid: tutorials/razor-pages/razor-pages-start
             - name: Add a model
@@ -164,6 +165,8 @@
           uid: mvc/views/dependency-injection
         - name: Unit test
           uid: mvc/controllers/testing
+    - name: Razor Components
+      uid: razor-components/index
     - name: Session and app state
       uid: fundamentals/app-state
     - name: Tag Helpers
@@ -308,6 +311,8 @@
           href: /azure/azure-signalr/signalr-overview
         - name: Redis backplane
           uid: signalr/redis-backplane
+        - name: SignalR with background services
+          uid: signalr/background-services
     - name: Configuration
       uid: signalr/configuration
     - name: Authentication and authorization
@@ -432,6 +437,36 @@
       uid: client-side/bundling-and-minification
     - name: Browser Link
       uid: client-side/using-browserlink
+    - name: Razor Components
+      items: 
+        - name: Overview
+          uid: razor-components/index
+        - name: Get started
+          uid: razor-components/get-started
+        - name: Build your first app
+          uid: tutorials/first-razor-components-app
+        - name: Components
+          uid: razor-components/components
+        - name: Component libraries
+          uid: razor-components/class-libraries
+        - name: Layouts
+          uid: razor-components/layouts
+        - name: Dependency injection
+          uid: razor-components/dependency-injection
+        - name: Routing
+          uid: razor-components/routing
+        - name: JavaScript interop
+          uid: razor-components/javascript-interop
+        - name: Debug
+          uid: razor-components/debug
+        - name: Hosting models
+          uid: razor-components/hosting-models
+        - name: Host and deploy
+          items:
+            - name: Overview
+              uid: host-and-deploy/razor-components/index
+            - name: Configure the Linker
+              uid: host-and-deploy/razor-components/configure-linker
     - name: Single Page Apps
       items: 
         - name: Overview
@@ -454,6 +489,8 @@
           uid: host-and-deploy/azure-apps/index
         - name: Publish with Visual Studio
           uid: tutorials/publish-to-azure-webapp-using-vs
+        - name: Publish with Visual Studio for Mac
+          href: /visualstudio/mac/publish-app-svc
         - name: Publish with CLI tools
           href: /azure/app-service/app-service-web-tutorial-dotnetcore-sqldb
         - name: Publish with Visual Studio and Git
@@ -522,10 +559,18 @@
       uid: host-and-deploy/web-farm
     - name: Visual Studio publish profiles
       uid: host-and-deploy/visual-studio-publish-profiles
+    - name: Visual Studio for Mac publish to folder
+      href: /visualstudio/mac/publish-folder
     - name: Directory structure
       uid: host-and-deploy/directory-structure
     - name: Health checks
       uid: host-and-deploy/health-checks
+    - name: Razor Components
+      items:
+        - name: Overview
+          uid: host-and-deploy/razor-components/index
+        - name: Configure the Linker
+          uid: host-and-deploy/razor-components/configure-linker
 - name: Security and Identity
   items: 
     - name: Overview
@@ -538,6 +583,8 @@
           uid: security/authentication/scaffold-identity
         - name: Add custom user data to Identity
           uid: security/authentication/add-user-data
+        - name: Authentication samples
+          uid: security/authentication/samples
         - name: Customize Identity
           uid: security/authentication/customize_identity_model
         - name: Community OSS authentication options
@@ -696,7 +743,7 @@
       uid: security/enforcing-ssl
     - name: EU General Data Protection Regulation (GDPR) support
       uid: security/gdpr
-    - name: Azure Key Vault configuration provider
+    - name: Azure Key Vault Configuration Provider
       uid: security/key-vault-configuration
     - name: Anti-request forgery
       uid: security/anti-request-forgery
@@ -762,11 +809,10 @@
       uid: fundamentals/logging/loggermessage
     - name: Use a file watcher
       uid: tutorials/dotnet-watch
-      items: 
-        - name: Factory-based middleware
-          uid: fundamentals/middleware/extensibility
-        - name: Factory-based middleware with third-party container
-          uid: fundamentals/middleware/extensibility-third-party-container
+    - name: Factory-based middleware
+      uid: fundamentals/middleware/extensibility
+    - name: Factory-based middleware with third-party container
+      uid: fundamentals/middleware/extensibility-third-party-container
 - name: Migration
   items: 
     - name: 2.2 to 3.0

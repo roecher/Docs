@@ -209,12 +209,12 @@ You can also use the `[HtmlTargetElement]` to change the name of the targeted el
 
 1. Add the following markup to the *About.cshtml* view. The highlighted markup displays the web site information.
 
-   [!code-html[](authoring/sample/AuthoringTagHelpers/src/AuthoringTagHelpers/Views/Home/About.cshtml?highlight=1,12-999)]
+   [!code-html[](authoring/sample/AuthoringTagHelpers/src/AuthoringTagHelpers/Views/Home/About.cshtml?highlight=1,4-8, 18-999)]
 
    > [!NOTE]
    > In the Razor markup shown below:
    >
-   > [!code-html[](authoring/sample/AuthoringTagHelpers/src/AuthoringTagHelpers/Views/Home/About.cshtml?range=13-17)]
+   > [!code-html[](authoring/sample/AuthoringTagHelpers/src/AuthoringTagHelpers/Views/Home/About.cshtml?range=18-18)]
    >
    > Razor knows the `info` attribute is a class, not a string, and you want to write C# code. Any non-string tag helper attribute should be written without the `@` character.
 
@@ -223,7 +223,7 @@ You can also use the `[HtmlTargetElement]` to change the name of the targeted el
    > [!NOTE]
    > You can use the following markup with a closing tag and remove the line with `TagMode.StartTagAndEndTag` in the tag helper:
    >
-   > [!code-html[](authoring/sample/AuthoringTagHelpers/src/AuthoringTagHelpers/Views/Home/AboutNotSelfClosing.cshtml?range=13-18)]
+   > [!code-html[](authoring/sample/AuthoringTagHelpers/src/AuthoringTagHelpers/Views/Home/AboutNotSelfClosing.cshtml?range=20-21)]
 
 ## Condition Tag Helper
 
