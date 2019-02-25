@@ -1,7 +1,6 @@
 ---
 title: Get started with ASP.NET Core MVC
 author: rick-anderson
-monikerRange: '>= aspnetcore-2.2'
 description: Learn how to get started with ASP.NET Core MVC.
 ms.author: riande
 ms.date: 12/12/2018
@@ -12,8 +11,6 @@ uid: tutorials/first-mvc-app/start-mvc
 By [Rick Anderson](https://twitter.com/RickAndMSFT)
 
 [!INCLUDE [consider RP](~/includes/razor.md)]
-
-https://docs.microsoft.com/en-us/visualstudio/ide/visual-studio-ide?view=vs-2017
 
 This tutorial teaches the basics of building an ASP.NET Core MVC web app.
 
@@ -28,9 +25,6 @@ The app manages a database of movie titles. You learn how to:
 At the end, you have an app that can manage and display movie data.
 
 [!INCLUDE[](~/includes/mvc-intro/download.md)]
-
-> [!NOTE]
-> We’re testing the usability of a proposed new structure for the ASP.NET Core table of contents.  If you have a few minutes to try an exercise of finding 7 different topics in the current or proposed table of contents, please [click here to participate in the study](https://dpk4xbh5.optimalworkshop.com/treejack/aa11wn82).
 
 [!INCLUDE[](~/includes/net-core-prereqs-all-2.2.md)]
 
@@ -97,7 +91,7 @@ The tutorial assumes familarity with VS Code. See [Getting started with VS Code]
 
 * Press **Ctrl-F5** to run without the debugger.
 
-  Visual Studio Code starts starts [Kestrel](xref:fundamentals/servers/kestrel), launches a browser, and navigates to `http://localhost:5001`. The address bar shows `localhost:port:5001` and not something like `example.com`. That's because `localhost` is the standard hostname for  local computer. Localhost only serves web requests from the local computer.
+  Visual Studio Code starts starts [Kestrel](xref:fundamentals/servers/kestrel), launches a browser, and navigates to `https://localhost:5001`. The address bar shows `localhost:port:5001` and not something like `example.com`. That's because `localhost` is the standard hostname for  local computer. Localhost only serves web requests from the local computer.
 
   Launching the app with **Ctrl+F5** (non-debug mode) allows you to make code changes, save the file, refresh the browser, and see the code changes. Many developers prefer to use non-debug mode to refresh the page and view changes.
 
